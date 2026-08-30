@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>陆嘉熠 — AI 应用 / 数据科学 / Applied Stats</title>
+    <meta name="description" content="深圳大学应用统计硕士 · AI 应用 / 数据科学方向。把统计直觉和 LLM / Agent 能力结合，做出能落地的产品。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='serif' font-weight='700'%3EL%3C/text%3E%3C/svg%3E" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- Decorative grain overlay (avoids flat AI gradient look) -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Decorative gradient blobs -->
+    <div class="bg-blob bg-blob-1" aria-hidden="true"></div>
+    <div class="bg-blob bg-blob-2" aria-hidden="true"></div>
+
+    <!-- ============================================ -->
+    <!-- HEADER — Top-right module navigation          -->
+    <!-- ============================================ -->
+    <header class="site-header">
+        <a href="#home" class="brand" aria-label="返回首屏">
+            <span class="brand-mark">L</span>
+            <span class="brand-text">陆嘉熠<span class="brand-dot">.</span></span>
+        </a>
+
+        <nav class="site-nav" aria-label="主导航">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main>
+        <!-- ============================================ -->
+        <!-- HERO                                          -->
+        <!-- ============================================ -->
+        <section id="home" class="hero">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-status" data-anim="fade-up">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <span>Available for Fall 2027 · Full-time & Internship</span>
+                    </div>
+
+                    <p class="hero-eyebrow" data-anim="fade-up" data-delay="100">
+                        Applied Statistics <span class="hero-divider">/</span> AI Product
+                    </p>
+
+                    <div class="hero-title-row">
+                        <h1 class="hero-title" data-anim="fade-up" data-delay="200">
+                            <span class="hero-line">Hi, I'm <em class="hero-name">Jiayi Lu</em>.</span>
+                            <span class="hero-line">I turn data into</span>
+                            <span class="hero-line">
+                                <span class="hero-accent">decisions</span>,
+                                <span class="hero-accent-2">products</span>,
+                            </span>
+                            <span class="hero-line">and the occasional <em class="hero-italic">aha</em>.</span>
+                        </h1>
+
+                        <div class="hero-portrait" data-anim="fade-up" data-delay="300">
+                            <div class="portrait-decor" aria-hidden="true">
+                                <span class="portrait-ring portrait-ring-1"></span>
+                                <span class="portrait-ring portrait-ring-2"></span>
+                                <span class="portrait-glow"></span>
+                                <span class="portrait-sparkle portrait-sparkle-1">✦</span>
+                                <span class="portrait-sparkle portrait-sparkle-2">✦</span>
+                            </div>
+                            <div class="portrait-frame">
+                                <img src="assets/avatar.jpg" alt="陆嘉熠 头像" class="portrait-img" />
+                            </div>
+                            <span class="portrait-tag" aria-label="L 标识">
+                                <em>L</em>
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="hero-tagline" data-anim="fade-up" data-delay="300">
+                        深圳大学应用统计硕士 · AI 应用 / 数据科学方向<br />
+                        把统计直觉和 LLM / Agent 能力结合，做出能落地的产品。
+                    </p>
+
+                    <div class="hero-ctas" data-anim="fade-up" data-delay="400">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+
+                    <ul class="hero-meta" data-anim="fade-up" data-delay="500">
+                        <li><span class="meta-label">Base</span><span class="meta-value">Shenzhen, CN</span></li>
+                        <li><span class="meta-label">Major</span><span class="meta-value">Applied Statistics · M.S.</span></li>
+                        <li><span class="meta-label">Focus</span><span class="meta-value">AI 应用 · 数据科学</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="#about" class="hero-scroll" aria-label="向下滚动">
+                <span>Scroll</span>
+                <span class="scroll-line" aria-hidden="true"></span>
+            </a>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- ABOUT                                          -->
+        <!-- ============================================ -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-num">01</span>
+                    <div>
+                        <h2 class="section-title">关于 <span class="title-en">— About</span></h2>
+                        <p class="section-sub">一个把数据和产品缝起来的人。</p>
+                    </div>
+                </div>
+
+                <div class="about-grid">
+                    <aside class="about-meta">
+                        <dl>
+                            <div><dt>姓名</dt><dd>陆嘉熠</dd></div>
+                            <div><dt>专业</dt><dd>应用统计（硕士）</dd></div>
+                            <div><dt>邮箱</dt><dd><a href="mailto:lujiayi2361516036@163.com">lujiayi2361516036@163.com</a></dd></div>
+                            <div><dt>状态</dt><dd>2027 届 · 秋招中</dd></div>
+                        </dl>
+                    </aside>
+
+                    <div class="about-text">
+                        <p>
+                            我是陆嘉熠，深圳大学应用统计硕士，<strong>2027 届秋招</strong>。
+                            本科是建筑环境与能源应用工程，硕士转向统计与 AI ——
+                            这条路径不是巧合，我对"用统计直觉判断边界，再交给 LLM / Agent 放大"这条路有持续兴趣。
+                        </p>
+                        <p>
+                            方向上覆盖 <strong>AI 应用 / 数据科学</strong> 两条线：
+                            <strong>SlayQuiz</strong>（AI 出题闯关小程序，跑通从 0 到 1 的产品闭环）、
+                            <strong>Strategem</strong>（面向储能/虚拟电厂的多 Agent 决策情报平台），同时在中金财富证券战略与数字化中心的数据与 AI 敏捷团队实习，处理 60 万 + 潜客数据，做画像、归因与 A/B 实验。
+                        </p>
+                        <p>
+                            学术方面一篇 <strong>ICME 2026 (CCF-B)</strong> 一作（SGT-Aug，长尾多标签分类）、
+                            一项 CPCI 国际会议一作（基于集成学习的时序预测），并以队长身份拿到全国大学生统计建模大赛广东赛区研究生组三等奖。
+                        </p>
+                        <p>
+                            做项目时坚持三个问题：<em>这个数字背后是什么业务问题？</em>
+                            <em>模型的边界在哪里？</em> <em>上线后谁会受影响？</em>
+                            站点结构按业界作品集惯例排：<span class="inline-num">02 经历</span> ·
+                            <span class="inline-num">03 项目</span> ·
+                            <span class="inline-num">04 技能</span>，可与简历对照阅读。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- EXPERIENCE                                      -->
+        <!-- ============================================ -->
+        <section id="experience" class="section experience">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-num">02</span>
+                    <div>
+                        <h2 class="section-title">经历 <span class="title-en">— Experience</span></h2>
+                        <p class="section-sub">最近的实习 · 时间倒序。</p>
+                    </div>
+                </div>
+
+                <ol class="exp-list">
+                    <li class="exp-item">
+                        <div class="exp-period">
+                            <span class="exp-year">2026.05 – 2026.09</span>
+                            <span class="exp-tag">实习</span>
+                        </div>
+                        <div class="exp-body">
+                            <h3 class="exp-role">数据分析实习生 <span class="exp-at">@ · 中国中金财富证券 · 战略与数字化中心 · 数据与人工智能敏捷团队</span></h3>
+                            <p class="exp-desc">
+                                <strong>数据分析与画像体系：</strong>用 Python 处理 60 万 + 潜客数据（含 80 + 业务字段），搭建五维潜客画像分析框架；
+                                建立 7 大维度、1000 + 存量标签的层级标签体系，为精准圈客与客户洞察智能体提供标准化数据底座。
+                            </p>
+                            <p class="exp-desc">
+                                <strong>渠道转化与归因分析：</strong>分析 18 个互联网渠道的获客与转化效率，通过漏斗矩阵定位 6 个核心渠道的 3 个关键流失断点（流失率最高约 50%）；
+                                采用归因分析定位用户流失关键因素；提出基于"渠道贡献—转化效率"四象限的渠道资源分配策略与触达优化建议。
+                            </p>
+                            <p class="exp-desc">
+                                <strong>统计建模与策略验证：</strong>用逻辑回归 + 随机森林分析转化影响因素；通过聚类做潜客画像分层；
+                                用双样本假设检验对比相同断点客群在不同触达策略下的转化差异；
+                                设计分层 A/B 测试框架，为差异化策略提供实验假设依据。
+                            </p>
+                            <ul class="exp-tags">
+                                <li>Python</li>
+                                <li>SQL</li>
+                                <li>归因分析</li>
+                                <li>漏斗分析</li>
+                                <li>A/B Testing</li>
+                                <li>随机森林</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- PROJECTS                                        -->
+        <!-- ============================================ -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-num">03</span>
+                    <div>
+                        <h2 class="section-title">项目 <span class="title-en">— Selected Work</span></h2>
+                        <p class="section-sub">3 个最能说明"我能做什么"的项目。</p>
+                    </div>
+                </div>
+
+                <ul class="project-list">
+
+                    <!-- P/01  SGT-Aug — ICME 2026 CCF-B (论文图占位) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--img" data-lightbox="image" data-lightbox-src="assets/projects/sgt-aug-figure.png" data-lightbox-caption="SGT-Aug · Fig. 1 — t-SNE &amp; Class Activation">
+                            <img src="assets/projects/sgt-aug-figure.png" alt="SGT-Aug 论文图：左为 t-SNE 嵌入，右为类激活热图" loading="lazy" />
+                            <span class="project-visual-caption">Fig. 1 — t-SNE &amp; Class Activation</span>
+                            <span class="project-zoom" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                View
+                            </span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-num">P / 01</span>
+                            <h3 class="project-title">SGT-Aug · 长尾多标签分类的语义引导数据增强 <span class="project-pub">· ICME 2026 (CCF-B) 一作</span></h3>
+                            <p class="project-sub">用预训练 Transformer 帮 ResNet 找"长尾类相关前景区域"，给少样本类别定向做数据增强。</p>
+                            <p class="project-desc">
+                                <strong>问题：</strong>长尾多标签图像分类里，尾类样本少、视觉特征弱，直接训容易把尾类"压"掉。
+                            </p>
+                            <p class="project-desc">
+                                <strong>做法：</strong>基于 ResNet50 骨干 + 预训练 Transformer 做语义-视觉交互，定位尾类相关前景区域；
+                                在定位结果上构建数据增强策略，缓解长尾类别的不平衡（不加剧类别不平衡）。
+                            </p>
+                            <p class="project-desc">
+                                <strong>训练与验证：</strong>在 Linux + PyTorch 上用单机多卡 DataParallel 分布式训练；
+                                在 VOC-LT / COCO-LT 上做系统对比和消融实验，结合常用分类损失函数即可优于多种现有长尾多标签方法。
+                            </p>
+                            <ul class="project-tags">
+                                <li>PyTorch</li>
+                                <li>ResNet50</li>
+                                <li>Transformer</li>
+                                <li>DataParallel</li>
+                                <li>VOC-LT / COCO-LT</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">论文 (ICME 2026) →</a>
+                                <a href="#" class="project-link project-link-external">BibTeX →</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- P/02  SlayQuiz — 微信小程序 (有视频) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--video" data-lightbox="video" data-lightbox-src="assets/videos/slayquiz-demo.mp4" data-lightbox-title="SlayQuiz · AI 出题闯关微信小程序 Demo" data-lightbox-caption="AI 出题 → 答题 → 错题本与自适应难度 · 全流程 0:57">
+                            <video
+                                class="project-video"
+                                poster=""
+                                preload="metadata"
+                                playsinline
+                                muted
+                                controls
+                                data-project-video
+                            >
+                                <source src="assets/videos/slayquiz-demo.mp4" type="video/mp4" />
+                                你的浏览器不支持视频标签。
+                            </video>
+
+                            <button type="button" class="project-play" data-play aria-label="播放 SlayQuiz Demo 视频">
+                                <span class="play-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </span>
+                                <span class="play-text">Play Demo</span>
+                            </button>
+
+                            <span class="project-time" aria-hidden="true">0:57</span>
+
+                            <span class="project-zoom" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                                Full
+                            </span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-num">P / 02</span>
+                            <h3 class="project-title">SlayQuiz · AI 出题闯关微信小程序</h3>
+                            <p class="project-sub">负责从需求调研、竞品分析、方案设计到前后端实现的完整链路，做出能自己出题、自己改错题的产品。</p>
+                            <p class="project-desc">
+                                <strong>前后端 + 核心产品：</strong>基于 Taro + TypeScript 构建微信小程序，配合 FastAPI 后端实现岗位创建、题目生成、答题记录、结果分析、知识库管理等核心接口。
+                            </p>
+                            <p class="project-desc">
+                                <strong>AI 生成链路：</strong>用 LangChain + DeepSeek 搭出题与反馈管线，加 JD 校验、联网搜索增强、结构化输出、题目规则校验四道关，提升题目生成与解析反馈的稳定性。
+                            </p>
+                            <p class="project-desc">
+                                <strong>RAG 私有知识库：</strong>支持 PDF / Word / URL 资料解析，文本切分后用 DashScope Embedding 向量化，存到 Qdrant，按用户隔离知识库，用于定制化练习出题。
+                                还搭了学习增强闭环：错题本、间隔复习、变式题、知识库练习、自适应难度 + XP 激励。
+                            </p>
+                            <p class="project-desc">
+                                <strong>AI 编程工具：</strong>用 VSCode / Claude Code / MCP / Agent Skills 辅助需求拆解、方案验证、代码实现和测试修复。
+                            </p>
+                            <ul class="project-tags">
+                                <li>Taro · TypeScript</li>
+                                <li>FastAPI</li>
+                                <li>LangChain</li>
+                                <li>RAG · Qdrant</li>
+                                <li>DashScope Embedding</li>
+                                <li>Claude Code</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/luck67-svg/SlayQuiz.git" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+                                <a href="https://github.com/luck67-svg/SlayQuiz.git" target="_blank" rel="noopener noreferrer" class="project-link project-link-external">代码仓库 →</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- P/03  Strategem — Multi-Agent Platform (有视频) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--video" data-lightbox="video" data-lightbox-src="assets/videos/strategem-demo.mp4" data-lightbox-title="Strategem · 企业决策情报多 Agent 平台 Demo" data-lightbox-caption="Planner → Research → Analysis → Financial → Verification · 多 Agent 流水线 1:13">
+                            <video
+                                class="project-video"
+                                poster=""
+                                preload="metadata"
+                                playsinline
+                                muted
+                                controls
+                                data-project-video
+                            >
+                                <source src="assets/videos/strategem-demo.mp4" type="video/mp4" />
+                                你的浏览器不支持视频标签。
+                            </video>
+
+                            <button type="button" class="project-play" data-play aria-label="播放 Strategem Demo 视频">
+                                <span class="play-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </span>
+                                <span class="play-text">Play Demo</span>
+                            </button>
+
+                            <span class="project-time" aria-hidden="true">1:13</span>
+
+                            <span class="project-zoom" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                                Full
+                            </span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-num">P / 03</span>
+                            <h3 class="project-title">Strategem · 企业决策情报多 Agent 平台</h3>
+                            <p class="project-sub">面向储能 / 虚拟电厂等数字能源场景，把行业研究从"读报告"做成"跑流水线"。</p>
+                            <p class="project-desc">
+                                <strong>多 Agent 产业研究工作流：</strong>基于 FastAPI + LangGraph + Next.js 构建 Planner → Research → Analysis → Financial → Verification 协同工作流，把用户问题拆成 Research Plan、子问题、检索计划与结构化报告大纲，让产业研究 / 报告生成自动化。
+                            </p>
+                            <p class="project-desc">
+                                <strong>双源检索与可信证据体系：</strong>设计 Source + Router + RAG 双路检索机制，结论与数据源结构化绑定，降低信息幻觉；
+                                把行业术语 / 价值链 / 指标口径做成可配置领域知识，注入到智能体里，覆盖产业链定位、政策市场、竞争格局、技术链等模块的动态深度分析。
+                            </p>
+                            <p class="project-desc">
+                                <strong>幻觉防控：</strong>围绕可信 AI 输出做引用链 + 审计机制，自动处理非法引用、未覆盖模块、低可信来源、重复证据和待验证问题。
+                            </p>
+                            <ul class="project-tags">
+                                <li>LangGraph</li>
+                                <li>RAG</li>
+                                <li>FastAPI</li>
+                                <li>Next.js</li>
+                                <li>Postgres + pgvector</li>
+                                <li>Claude / DeepSeek</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/luck67-svg/Strategem.git" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+                                <a href="https://github.com/luck67-svg/Strategem.git" target="_blank" rel="noopener noreferrer" class="project-link project-link-external">代码仓库 →</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- P/04  LSTM 集成时序预测 — CPCI 一作 (流程图) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--img" data-lightbox="image" data-lightbox-src="assets/projects/lstm-bagging.png" data-lightbox-caption="LSTM + Bagging 集成时序预测方法流程图">
+                            <img src="assets/projects/lstm-bagging.png" alt="LSTM + Bagging 集成时序预测方法流程图" loading="lazy" />
+                            <span class="project-zoom" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                View
+                            </span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-num">P / 04</span>
+                            <h3 class="project-title">基于集成学习的时序序列预测模型研究 <span class="project-pub">· CPCI 一作</span></h3>
+                            <p class="project-sub">金融时序非线性强、噪声大，单 LSTM 不够稳。论文用 Bagging + LSTM 把误差打下来。</p>
+                            <p class="project-desc">
+                                <strong>特征工程：</strong>对股票历史数据做探索性分析，挖掘开盘 / 收盘 / 成交量等关键指标，构建多维时序特征；
+                                用 Fourier 变换和 B-spline 基函数做时序平滑和特征映射。
+                            </p>
+                            <p class="project-desc">
+                                <strong>核心模型：</strong>基于 TensorFlow 搭 LSTM 基预测模型，捕捉长期依赖。
+                            </p>
+                            <p class="project-desc">
+                                <strong>集成与验证：</strong>用 Bagging 集成框架构建差异化训练子集，并行训练多个 LSTM 基学习器；
+                                在多个预测时间段上，预测误差均显著低于单一 LSTM 模型。
+                            </p>
+                            <ul class="project-tags">
+                                <li>TensorFlow</li>
+                                <li>LSTM</li>
+                                <li>Bagging</li>
+                                <li>Fourier / B-spline</li>
+                                <li>时间序列</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">论文 (CPCI) →</a>
+                                <a href="#" class="project-link project-link-external">BibTeX →</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- P/05  肺部 X 光片 — 全国统计建模大赛 (流程图占位) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--img" data-lightbox="image" data-lightbox-src="assets/projects/pneumonia-flow.png" data-lightbox-caption="肺部 X 光片智能识别研究方法流程图">
+                            <img src="assets/projects/pneumonia-flow.png" alt="肺部 X 光片智能识别研究方法流程图" loading="lazy" />
+                            <span class="project-zoom" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                View
+                            </span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-num">P / 05</span>
+                            <h3 class="project-title">肺部 X 光片智能识别与统计建模 <span class="project-pub">· 全国大学生统计建模大赛 · 队长</span></h3>
+                            <p class="project-sub">用 CNN 抓局部纹理 + GNN 抓区域关系，给肺炎 X 光片做分类。</p>
+                            <p class="project-desc">
+                                <strong>问题：</strong>肺部影像里病灶区域分散，单看局部纹理容易漏掉空间关系线索。
+                            </p>
+                            <p class="project-desc">
+                                <strong>做法：</strong>提出 SLICO 超像素分割构建肺部 X 光区域邻接图，用 CNN 提取节点特征，再用 GNN 建模区域间关系，做局部特征和区域关系的联合表征。
+                            </p>
+                            <p class="project-desc">
+                                <strong>结果：</strong>系统性设计对比实验与评估流程，推动模型关键指标提升，<strong>分类准确率 92%，敏感性 91.5%，AUC 99.5%</strong>；
+                                作为队长负责技术路线规划、对比实验设计与团队协调。
+                            </p>
+                            <ul class="project-tags">
+                                <li>PyTorch</li>
+                                <li>CNN</li>
+                                <li>GNN（图神经网络）</li>
+                                <li>SLICO 超像素</li>
+                                <li>医学影像</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">竞赛主页 →</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- P/06  基于 Stacking 集成框架的糖尿病预测模型 (新) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--img" data-lightbox="image" data-lightbox-src="assets/projects/diabetes-flow.png" data-lightbox-caption="基于 Stacking 集成框架的糖尿病预测模型流程图">
+                            <img src="assets/projects/diabetes-flow.png" alt="基于 Stacking 集成框架的糖尿病预测模型流程图" loading="lazy" />
+                            <span class="project-zoom" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                View
+                            </span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-num">P / 06</span>
+                            <h3 class="project-title">基于 Stacking 集成框架的糖尿病预测模型 <span class="project-pub">· PIMA · Stacking 集成</span></h3>
+                            <p class="project-sub">用 Stacking 把 LR / SVM / CART 三个基学习器 + AdaBoost / GBDT 串起来，在 PIMA 上把 AUC 拉到 0.96。</p>
+                            <p class="project-desc">
+                                <strong>数据预处理：</strong>针对类别不平衡，先用 KNN 填补缺失值，再做随机下采样平衡正负样本；
+                                划分 80% 训练集 / 20% 测试集，并对数值特征做归一化。
+                            </p>
+                            <p class="project-desc">
+                                <strong>基学习器 + Boosting：</strong>构建逻辑回归（LR）/ SVM / CART 决策树三类基分类模型；
+                                以决策树为基学习器进一步搭建 AdaBoost 与 Gradient Boosting 集成模型。
+                            </p>
+                            <p class="project-desc">
+                                <strong>Stacking + 超参搜索：</strong>用 5 折交叉验证 + 贝叶斯优化（Optuna）做超参搜索；
+                                最终 Stacking 融合模型在测试集上 <strong>AUC=0.96 / Recall=0.84 / Accuracy=0.89</strong>，
+                                <strong>AUC 较逻辑回归基线提升 10.3%</strong>。
+                            </p>
+                            <ul class="project-tags">
+                                <li>逻辑回归 · SVM</li>
+                                <li>CART 决策树</li>
+                                <li>AdaBoost · GBDT</li>
+                                <li>Stacking</li>
+                                <li>Optuna</li>
+                                <li>PIMA</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">论文 / Report →</a>
+                                <a href="#" class="project-link project-link-external">GitHub →</a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SKILLS                                          -->
+        <!-- ============================================ -->
+        <section id="skills" class="section skills">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-num">04</span>
+                    <div>
+                        <h2 class="section-title">技能 <span class="title-en">— Stack</span></h2>
+                        <p class="section-sub">AI 应用 / 机器学习 / 数据分析 / 工程 & 证书 四个维度。</p>
+                    </div>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <span class="skill-num">S / 01</span>
+                        <h3>AI 应用 & 开发</h3>
+                        <ul>
+                            <li>LangChain · LangGraph · Agent / 多 Agent 编排</li>
+                            <li>RAG · Embedding · 向量检索（Qdrant / pgvector）</li>
+                            <li>FastAPI · Docker · Postgres</li>
+                            <li>Claude / DeepSeek · Prompt · 工具调用</li>
+                            <li>Claude Code / Codex / MCP / Agent Skills 辅助开发</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-num">S / 02</span>
+                        <h3>机器学习 & 深度学习</h3>
+                        <ul>
+                            <li>PyTorch · TensorFlow（CCF-B / CPCI 一作经验）</li>
+                            <li>CNN · GNN · ResNet · Transformer</li>
+                            <li>LSTM · 时序建模 · Bagging 集成</li>
+                            <li>随机森林 / 聚类 / 假设检验 / 回归</li>
+                            <li>单机多卡 DataParallel 分布式训练</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-num">S / 03</span>
+                        <h3>数据分析 & 实验</h3>
+                        <ul>
+                            <li>Python · pandas / NumPy / scipy</li>
+                            <li>SQL · 复杂查询 / 窗口函数 / 60 万 + 潜客实战</li>
+                            <li>漏斗分析 · 归因分析 · 分层 A/B 实验</li>
+                            <li>五维用户画像 / 1000 + 标签体系搭建</li>
+                            <li>R 语言（课程项目）</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-num">S / 04</span>
+                        <h3>证书 & 其他</h3>
+                        <ul>
+                            <li>CDA 数据分析师 · Level I & II</li>
+                            <li>CDGA 数据治理工程师</li>
+                            <li>CET-6 · 537 分</li>
+                            <li>专业排名 3 / 20 · 一等奖学金</li>
+                            <li>共产党员 · 23 岁</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- CONTACT                                         -->
+        <!-- ============================================ -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="contact-bar">
+                    <a href="mailto:lujiayi2361516036@163.com" class="contact-bar-email">
+                        lujiayi2361516036@163.com
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+
+                    <ul class="contact-bar-links">
+                        <li><a href="https://github.com/luck67-svg" target="_blank" rel="noopener noreferrer">GitHub →</a></li>
+                        <li><a href="https://github.com/luck67-svg/Strategem.git" target="_blank" rel="noopener noreferrer">Strategem →</a></li>
+                        <li><a href="https://github.com/luck67-svg/SlayQuiz.git" target="_blank" rel="noopener noreferrer">SlayQuiz →</a></li>
+                        <li><a href="mailto:lujiayi2361516036@163.com">lujiayi2361516036@163.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================ -->
+    <!-- DEMO MODAL                                     -->
+    <!-- ============================================ -->
+    <div class="demo-modal" id="demoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="demoTitle">
+        <div class="demo-modal-backdrop" data-demo-close></div>
+        <div class="demo-modal-content" role="document">
+            <button class="demo-modal-close" type="button" aria-label="关闭演示" data-demo-close>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="demo-modal-video" id="demoVideoContainer">
+                <!-- video / iframe injected by JS -->
+            </div>
+            <div class="demo-modal-info">
+                <h3 id="demoTitle" class="demo-modal-title">Demo 标题</h3>
+                <p id="demoDesc" class="demo-modal-desc">Demo 描述</p>
+                <a id="demoExternal" href="#" target="_blank" rel="noopener noreferrer" class="demo-modal-external">
+                    在新窗口打开 →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <span class="brand-mark brand-mark-sm">L</span>
+                <span>© 2026 陆嘉熠 · Built with care for Fall 2027 秋招.</span>
+            </div>
+            <div class="footer-right">
+                <span>Hand-coded with</span>
+                <span class="footer-tech">HTML</span>
+                <span>·</span>
+                <span class="footer-tech">CSS</span>
+                <span>·</span>
+                <span class="footer-tech">JS</span>
+                <span>·</span>
+                <span>Fonts by Google</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

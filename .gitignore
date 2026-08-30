@@ -1,0 +1,48 @@
+# =========================================================
+# Lykke-website · Git ignore
+# Keep deployable artifacts; exclude debug / privacy / refs.
+# =========================================================
+
+# --- Debug / tooling ---
+*.py
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- ffmpeg / video processing leftovers ---
+*.log.stale
+*.compressed.mp4
+*.compressed.stale.mp4
+*.bak.mp4
+
+# --- Resume drafts (contain private contact / personal data) ---
+resume_dump.txt
+resume_*.txt
+*.docx
+*.pdf
+
+# --- Internal style references (used during design, not for deploy) ---
+网页风格/
+*.tmp.md
+
+# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Local secrets (none today, but reserve) ---
+.env
+.env.local
+.env.*.local
+
+# --- Node / build (none today, reserve for future) ---
+node_modules/
+dist/
+.cache/
+.vercel/
+.netlify/
