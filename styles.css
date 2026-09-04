@@ -590,6 +590,22 @@ body::before {
     transform: rotate(0deg) scale(1.05);
 }
 
+/* Language switch (e.g. EN / 中文) — sits at the end of the nav */
+.nav-link-lang {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding-left: var(--s-3);
+    margin-left: var(--s-2);
+    border-left: 1px solid var(--border);
+    color: var(--ink-3);
+    transition: color var(--t-fast) var(--ease),
+                border-color var(--t-fast) var(--ease);
+}
+.nav-link-lang:hover { color: var(--accent); border-left-color: var(--accent); }
+
 /* ----- Sections ------------------------------------------- */
 .section {
     padding: var(--s-5) 0;

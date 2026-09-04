@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jiayi Lu — AI Apps / Data Science / Applied Stats</title>
+    <meta name="description" content="M.S. in Applied Statistics at Shenzhen University · AI Apps / Data Science. Bridging statistical intuition with LLM / Agent capabilities into production-ready products." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='serif' font-weight='700'%3EL%3C/text%3E%3C/svg%3E" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- Decorative grain overlay (avoids flat AI gradient look) -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Decorative gradient blobs -->
+    <div class="bg-blob bg-blob-1" aria-hidden="true"></div>
+    <div class="bg-blob bg-blob-2" aria-hidden="true"></div>
+
+    <!-- ============================================ -->
+    <!-- HEADER — Top-right module navigation          -->
+    <!-- ============================================ -->
+    <header class="site-header">
+        <a href="#home" class="brand" aria-label="Back to top">
+            <span class="brand-mark">L</span>
+            <span class="brand-text">Jiayi Lu<span class="brand-dot">.</span></span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="index.html" class="nav-link nav-link-lang" hreflang="zh-CN">中文</a>
+        </nav>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main>
+        <!-- ============================================ -->
+        <!-- HERO                                          -->
+        <!-- ============================================ -->
+        <section id="home" class="hero">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-status" data-anim="fade-up">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <span>Available for Fall 2027 · Full-time & Internship</span>
+                    </div>
+
+                    <p class="hero-eyebrow" data-anim="fade-up" data-delay="100">
+                        Applied Statistics <span class="hero-divider">/</span> AI Product
+                    </p>
+
+                    <div class="hero-title-row">
+                        <h1 class="hero-title" data-anim="fade-up" data-delay="200">
+                            <span class="hero-line">Hi, I'm <em class="hero-name">Jiayi Lu</em>.</span>
+                            <span class="hero-line">I turn data into</span>
+                            <span class="hero-line">
+                                <span class="hero-accent">decisions</span>,
+                                <span class="hero-accent-2">products</span>,
+                            </span>
+                            <span class="hero-line">and the occasional <em class="hero-italic">aha</em>.</span>
+                        </h1>
+
+                        <div class="hero-portrait" data-anim="fade-up" data-delay="300">
+                            <div class="portrait-decor" aria-hidden="true">
+                                <span class="portrait-ring portrait-ring-1"></span>
+                                <span class="portrait-ring portrait-ring-2"></span>
+                                <span class="portrait-glow"></span>
+                                <span class="portrait-sparkle portrait-sparkle-1">✦</span>
+                                <span class="portrait-sparkle portrait-sparkle-2">✦</span>
+                            </div>
+                            <div class="portrait-frame">
+                                <img src="assets/avatar.jpg" alt="Jiayi Lu portrait" class="portrait-img" />
+                            </div>
+                            <span class="portrait-tag" aria-label="L monogram">
+                                <em>L</em>
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="hero-tagline" data-anim="fade-up" data-delay="300">
+                        M.S. in Applied Statistics, Shenzhen University · AI Apps / Data Science<br />
+                        Bridging statistical intuition with LLM / Agent capabilities into production-ready products.
+                    </p>
+
+                    <div class="hero-ctas" data-anim="fade-up" data-delay="400">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+
+                    <ul class="hero-meta" data-anim="fade-up" data-delay="500">
+                        <li><span class="meta-label">Base</span><span class="meta-value">Shenzhen, CN</span></li>
+                        <li><span class="meta-label">Major</span><span class="meta-value">Applied Statistics · M.S.</span></li>
+                        <li><span class="meta-label">Focus</span><span class="meta-value">AI Apps · Data Science</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="#about" class="hero-scroll" aria-label="Scroll down">
+                <span>Scroll</span>
+                <span class="scroll-line" aria-hidden="true"></span>
+            </a>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- ABOUT                                          -->
+        <!-- ============================================ -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-num">01</span>
+                    <div>
+                        <h2 class="section-title">About</h2>
+                        <p class="section-sub">A person who stitches data and products together.</p>
+                    </div>
+                </div>
+
+                <div class="about-grid">
+                    <aside class="about-meta">
+                        <dl>
+                            <div><dt>Name</dt><dd>Jiayi Lu</dd></div>
+                            <div><dt>Major</dt><dd>Applied Statistics (M.S.)</dd></div>
+                            <div><dt>Email</dt><dd><a href="mailto:lujiayi2361516036@163.com">lujiayi2361516036@163.com</a></dd></div>
+                            <div><dt>Status</dt><dd>Class of 2027 · Recruiting</dd></div>
+                        </dl>
+                    </aside>
+
+                    <div class="about-text">
+                        <p>
+                            I'm Jiayi Lu, an M.S. in Applied Statistics at Shenzhen University, <strong>recruiting for Fall 2027</strong>.
+                            My B.S. was in Building Environment &amp; Energy Engineering; the pivot to statistics and AI in grad school wasn't an accident — I keep returning to the same idea: use statistical intuition to bound the problem, then hand it off to LLMs / Agents to scale.
+                        </p>
+                        <p>
+                            I work across two tracks — <strong>AI Apps and Data Science</strong>:
+                            <strong>SlayQuiz</strong> (an AI-powered quiz mini-program, full 0→1 product loop),
+                            <strong>Strategem</strong> (a multi-Agent decision-intelligence platform for energy-storage / virtual-power-plant scenarios), while interning at CICC Wealth's Strategy &amp; Digital Center, working on 600K+ prospect records — profiling, attribution, and A/B experiments.
+                        </p>
+                        <p>
+                            Research: first-author on an <strong>ICME 2026 (CCF-B)</strong> paper (SGT-Aug, long-tailed multi-label classification) and a CPCI conference paper (Bagging-ensemble time-series forecasting). Led a team to 3rd prize in the Guangdong regional track of the National Statistical Modeling Contest.
+                        </p>
+                        <p>
+                            Three questions I keep asking on every project: <em>What's the business problem behind this number?</em>
+                            <em>Where are the model's limits?</em> <em>Who's affected when this ships?</em>
+                            The site follows the standard portfolio layout — <span class="inline-num">02 Experience</span> ·
+                            <span class="inline-num">03 Projects</span> ·
+                            <span class="inline-num">04 Skills</span> — to mirror the résumé.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- EXPERIENCE                                      -->
+        <!-- ============================================ -->
+        <section id="experience" class="section experience">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-num">02</span>
+                    <div>
+                        <h2 class="section-title">Experience</h2>
+                        <p class="section-sub">Latest internship · reverse-chronological.</p>
+                    </div>
+                </div>
+
+                <ol class="exp-list">
+                    <li class="exp-item">
+                        <div class="exp-period">
+                            <span class="exp-year">2026.05 – 2026.09</span>
+                            <span class="exp-tag">Intern</span>
+                        </div>
+                        <div class="exp-body">
+                            <h3 class="exp-role">Data Analytics Intern <span class="exp-at">@ CICC Wealth · Strategy &amp; Digital Center · Data &amp; AI Agile Team</span></h3>
+                            <p class="exp-desc">
+                                <strong>Profiling &amp; data foundation:</strong> processed 600K+ prospect records (80+ business fields) in Python and built a five-dimension prospect-profile framework; established a 7-dimension, 1000+ tag hierarchy as the canonical data layer for precision targeting and the customer-insight agent.
+                            </p>
+                            <p class="exp-desc">
+                                <strong>Channel conversion &amp; attribution:</strong> analyzed 18 online channels' acquisition efficiency; funnel-matrix analysis isolated 3 critical drop-off points across 6 core channels (peak drop-off ~50%). Attribution analysis surfaced the dominant churn drivers. Proposed a contribution-vs-efficiency 2×2 to reallocate channel budgets and optimize outreach.
+                            </p>
+                            <p class="exp-desc">
+                                <strong>Modeling &amp; experiment design:</strong> logistic regression + random forest to surface conversion drivers; clustering for prospect segmentation; two-sample hypothesis tests to compare conversion across reach strategies at the same drop-off cohort; designed a stratified A/B framework for differentiated-policy testing.
+                            </p>
+                            <ul class="exp-tags">
+                                <li>Python</li>
+                                <li>SQL</li>
+                                <li>Attribution</li>
+                                <li>Funnel</li>
+                                <li>A/B Testing</li>
+                                <li>Random Forest</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- PROJECTS                                        -->
+        <!-- ============================================ -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-num">03</span>
+                    <div>
+                        <h2 class="section-title">Selected Work</h2>
+                        <p class="section-sub">6 projects that best show what I can do.</p>
+                    </div>
+                </div>
+
+                <ul class="project-list">
+
+                    <!-- P/01  SGT-Aug — ICME 2026 CCF-B (paper figure) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--img" data-lightbox="image" data-lightbox-src="assets/projects/sgt-aug-figure.png" data-lightbox-caption="SGT-Aug · Fig. 1 — t-SNE &amp; Class Activation">
+                            <img src="assets/projects/sgt-aug-figure.png" alt="SGT-Aug paper figure: t-SNE embedding (left) and class activation (right)" loading="lazy" />
+                            <span class="project-visual-caption">Fig. 1 — t-SNE &amp; Class Activation</span>
+                            <span class="project-zoom" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                View
+                            </span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-num">P / 01</span>
+                            <h3 class="project-title">SGT-Aug · Semantics-Guided Data Augmentation for Long-Tailed Multi-Label Classification <span class="project-pub">· ICME 2026 (CCF-B) · 1st author</span></h3>
+                            <p class="project-sub">Use a pretrained Transformer to guide ResNet toward tail-class-relevant foreground regions, then synthesize augmentations for low-shot classes.</p>
+                            <p class="project-desc">
+                                <strong>Problem:</strong> in long-tailed multi-label image classification, tail classes are sparse and visually weak — naive training tends to "squeeze them out".
+                            </p>
+                            <p class="project-desc">
+                                <strong>Approach:</strong> ResNet50 backbone + pretrained Transformer for semantic–vision interaction, localizing tail-class-relevant foreground regions. Augmentation is built on those localizations to ease the long-tail imbalance without amplifying it.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Training &amp; validation:</strong> Linux + PyTorch with single-node multi-GPU DataParallel. Systematic comparison and ablations on VOC-LT / COCO-LT, combined with standard classification losses, outperform several long-tailed multi-label baselines.
+                            </p>
+                            <ul class="project-tags">
+                                <li>PyTorch</li>
+                                <li>ResNet50</li>
+                                <li>Transformer</li>
+                                <li>DataParallel</li>
+                                <li>VOC-LT / COCO-LT</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Paper (ICME 2026) →</a>
+                                <a href="#" class="project-link project-link-external">BibTeX →</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- P/02  SlayQuiz — WeChat mini-program (with video) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--video" data-lightbox="video" data-lightbox-src="assets/videos/slayquiz-demo.mp4" data-lightbox-title="SlayQuiz · AI-Powered Quiz WeChat Mini-Program Demo" data-lightbox-caption="AI question generation → answering → mistake book + adaptive difficulty · full flow 0:57">
+                            <video
+                                class="project-video"
+                                poster=""
+                                preload="metadata"
+                                playsinline
+                                muted
+                                controls
+                                data-project-video
+                            >
+                                <source src="assets/videos/slayquiz-demo.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+
+                            <button type="button" class="project-play" data-play aria-label="Play SlayQuiz demo video">
+                                <span class="play-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </span>
+                                <span class="play-text">Play Demo</span>
+                            </button>
+
+                            <span class="project-time" aria-hidden="true">0:57</span>
+
+                            <span class="project-zoom" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                                Full
+                            </span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-num">P / 02</span>
+                            <h3 class="project-title">SlayQuiz · AI-Powered Quiz WeChat Mini-Program</h3>
+                            <p class="project-sub">Owned the full lifecycle from research and competitive analysis to design and full-stack implementation — a product that generates its own questions and self-corrects.</p>
+                            <p class="project-desc">
+                                <strong>Full-stack + product core:</strong> WeChat mini-program built with Taro + TypeScript, backed by a FastAPI server powering job creation, question generation, answer logging, result analysis, and knowledge-base management.
+                            </p>
+                            <p class="project-desc">
+                                <strong>AI generation pipeline:</strong> question &amp; feedback pipeline via LangChain + DeepSeek with four guardrails — JD validation, web-search augmentation, structured output, and rule-based sanity checks — making both generation and feedback noticeably more stable.
+                            </p>
+                            <p class="project-desc">
+                                <strong>RAG private knowledge base:</strong> parses PDF / Word / URLs, chunks and embeds with DashScope Embedding, stores in Qdrant, and isolates namespaces per user for personalized practice. Adds a learning loop: mistake notebook, spaced repetition, variant questions, KB drills, adaptive difficulty + XP rewards.
+                            </p>
+                            <p class="project-desc">
+                                <strong>AI dev tools:</strong> VSCode / Claude Code / MCP / Agent Skills for spec breakdown, solution validation, implementation, and test-fix cycles.
+                            </p>
+                            <ul class="project-tags">
+                                <li>Taro · TypeScript</li>
+                                <li>FastAPI</li>
+                                <li>LangChain</li>
+                                <li>RAG · Qdrant</li>
+                                <li>DashScope Embedding</li>
+                                <li>Claude Code</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/luck67-svg/SlayQuiz.git" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+                                <a href="https://github.com/luck67-svg/SlayQuiz.git" target="_blank" rel="noopener noreferrer" class="project-link project-link-external">Source →</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- P/03  Strategem — Multi-Agent Platform (with video) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--video" data-lightbox="video" data-lightbox-src="assets/videos/strategem-demo.mp4" data-lightbox-title="Strategem · Multi-Agent Decision-Intelligence Platform Demo" data-lightbox-caption="Planner → Research → Analysis → Financial → Verification · multi-Agent pipeline 1:13">
+                            <video
+                                class="project-video"
+                                poster=""
+                                preload="metadata"
+                                playsinline
+                                muted
+                                controls
+                                data-project-video
+                            >
+                                <source src="assets/videos/strategem-demo.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+
+                            <button type="button" class="project-play" data-play aria-label="Play Strategem demo video">
+                                <span class="play-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </span>
+                                <span class="play-text">Play Demo</span>
+                            </button>
+
+                            <span class="project-time" aria-hidden="true">1:13</span>
+
+                            <span class="project-zoom" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                                Full
+                            </span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-num">P / 03</span>
+                            <h3 class="project-title">Strategem · Multi-Agent Decision-Intelligence Platform</h3>
+                            <p class="project-sub">For energy-storage / virtual-power-plant digital-energy scenarios — turning industry research from "reading reports" into a runnable pipeline.</p>
+                            <p class="project-desc">
+                                <strong>Multi-Agent research workflow:</strong> Planner → Research → Analysis → Financial → Verification on FastAPI + LangGraph + Next.js. Decomposes a user query into a research plan, sub-questions, a retrieval plan, and a structured outline — automating both industry research and report generation.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Dual-source retrieval &amp; evidence binding:</strong> Source + Router + RAG dual-channel retrieval; claims are structured-bound to evidence, slashing hallucination. Industry terms / value chains / metric definitions are packaged as configurable domain knowledge injected into the agents — covering industry positioning, policy &amp; market, competitive landscape, and tech chains with on-demand depth.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Hallucination control:</strong> citation chains + an audit layer that auto-handles dangling citations, uncovered modules, low-credibility sources, duplicate evidence, and pending verifications.
+                            </p>
+                            <ul class="project-tags">
+                                <li>LangGraph</li>
+                                <li>RAG</li>
+                                <li>FastAPI</li>
+                                <li>Next.js</li>
+                                <li>Postgres + pgvector</li>
+                                <li>Claude / DeepSeek</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/luck67-svg/Strategem.git" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+                                <a href="https://github.com/luck67-svg/Strategem.git" target="_blank" rel="noopener noreferrer" class="project-link project-link-external">Source →</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- P/04  LSTM Ensemble Time-Series Forecasting — CPCI 1st author (flowchart) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--img" data-lightbox="image" data-lightbox-src="assets/projects/lstm-bagging.png" data-lightbox-caption="LSTM + Bagging ensemble time-series forecasting pipeline">
+                            <img src="assets/projects/lstm-bagging.png" alt="LSTM + Bagging ensemble time-series forecasting pipeline" loading="lazy" />
+                            <span class="project-zoom" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                View
+                            </span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-num">P / 04</span>
+                            <h3 class="project-title">Ensemble Learning for Time-Series Forecasting <span class="project-pub">· CPCI · 1st author</span></h3>
+                            <p class="project-sub">Financial time series are highly nonlinear and noisy — a single LSTM is unstable. The paper boosts robustness with a Bagging + LSTM ensemble.</p>
+                            <p class="project-desc">
+                                <strong>Feature engineering:</strong> EDA on historical stock data to surface open / close / volume signals and craft multi-dimensional features; Fourier and B-spline basis functions for smoothing and feature mapping.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Core model:</strong> TensorFlow-based LSTM capturing long-range dependencies.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Ensemble &amp; validation:</strong> Bagging constructs diversified training subsets, training multiple LSTMs in parallel. Across multiple forecast horizons, prediction error is significantly lower than the single-LSTM baseline.
+                            </p>
+                            <ul class="project-tags">
+                                <li>TensorFlow</li>
+                                <li>LSTM</li>
+                                <li>Bagging</li>
+                                <li>Fourier / B-spline</li>
+                                <li>Time-Series</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Paper (CPCI) →</a>
+                                <a href="#" class="project-link project-link-external">BibTeX →</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- P/05  Chest X-Ray — National Statistical Modeling Contest (flowchart) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--img" data-lightbox="image" data-lightbox-src="assets/projects/pneumonia-flow.png" data-lightbox-caption="Chest X-ray intelligent recognition methodology flowchart">
+                            <img src="assets/projects/pneumonia-flow.png" alt="Chest X-ray intelligent recognition methodology flowchart" loading="lazy" />
+                            <span class="project-zoom" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                View
+                            </span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-num">P / 05</span>
+                            <h3 class="project-title">Chest X-Ray Intelligent Recognition &amp; Statistical Modeling <span class="project-pub">· National Statistical Modeling Contest · Team Lead</span></h3>
+                            <p class="project-sub">CNN for local texture + GNN for inter-region relations — pneumonia classification on chest X-rays.</p>
+                            <p class="project-desc">
+                                <strong>Problem:</strong> lesion regions are scattered; local-texture-only models miss spatial-relation cues.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Approach:</strong> build a region adjacency graph via SLICO superpixel segmentation, extract per-node features with CNN, then model inter-region relations with GNN — a joint local + relational representation.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Results:</strong> systematic experiments &amp; evaluation lifted headline metrics to <strong>92% accuracy, 91.5% sensitivity, 99.5% AUC</strong>; as team lead, owned the technical roadmap, experimental design, and coordination.
+                            </p>
+                            <ul class="project-tags">
+                                <li>PyTorch</li>
+                                <li>CNN</li>
+                                <li>GNN</li>
+                                <li>SLICO Superpixel</li>
+                                <li>Medical Imaging</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Contest Page →</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- P/06  Diabetes Prediction via Stacking-Ensemble Framework (new) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--img" data-lightbox="image" data-lightbox-src="assets/projects/diabetes-flow.png" data-lightbox-caption="Stacking-ensemble diabetes prediction pipeline">
+                            <img src="assets/projects/diabetes-flow.png" alt="Stacking-ensemble diabetes prediction pipeline" loading="lazy" />
+                            <span class="project-zoom" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                View
+                            </span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-num">P / 06</span>
+                            <h3 class="project-title">Diabetes Prediction via a Stacking-Ensemble Framework <span class="project-pub">· PIMA · Stacking Ensemble</span></h3>
+                            <p class="project-sub">Stacking LR / SVM / CART with AdaBoost / GBDT — pushed PIMA AUC to 0.96.</p>
+                            <p class="project-desc">
+                                <strong>Preprocessing:</strong> KNN imputation for missing values, then random undersampling to address class imbalance; 80/20 train-test split, with numerical features normalized.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Base learners + boosting:</strong> Logistic Regression, SVM, and CART as base classifiers; CART further wrapped into AdaBoost and Gradient Boosting ensembles.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Stacking + hyperparam search:</strong> 5-fold cross-validation with Bayesian optimization (Optuna). The fused Stacking model hit <strong>AUC 0.96 / Recall 0.84 / Accuracy 0.89</strong> — a <strong>10.3-point AUC lift over the logistic-regression baseline</strong>.
+                            </p>
+                            <ul class="project-tags">
+                                <li>Logistic Regression · SVM</li>
+                                <li>CART Decision Tree</li>
+                                <li>AdaBoost · GBDT</li>
+                                <li>Stacking</li>
+                                <li>Optuna</li>
+                                <li>PIMA</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Paper / Report →</a>
+                                <a href="#" class="project-link project-link-external">GitHub →</a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SKILLS                                          -->
+        <!-- ============================================ -->
+        <section id="skills" class="section skills">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-num">04</span>
+                    <div>
+                        <h2 class="section-title">Skills</h2>
+                        <p class="section-sub">Four buckets: AI Apps / ML / Data Analytics / Engineering &amp; Certs.</p>
+                    </div>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <span class="skill-num">S / 01</span>
+                        <h3>AI Apps &amp; Engineering</h3>
+                        <ul>
+                            <li>LangChain · LangGraph · Agent / multi-Agent orchestration</li>
+                            <li>RAG · Embedding · vector search (Qdrant / pgvector)</li>
+                            <li>FastAPI · Docker · Postgres</li>
+                            <li>Claude / DeepSeek · Prompting · tool-use</li>
+                            <li>Claude Code / Codex / MCP / Agent Skills for development</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-num">S / 02</span>
+                        <h3>Machine Learning &amp; Deep Learning</h3>
+                        <ul>
+                            <li>PyTorch · TensorFlow (CCF-B / CPCI first-author)</li>
+                            <li>CNN · GNN · ResNet · Transformer</li>
+                            <li>LSTM · time-series modeling · Bagging ensembles</li>
+                            <li>Random forest / clustering / hypothesis testing / regression</li>
+                            <li>Single-node multi-GPU DataParallel training</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-num">S / 03</span>
+                        <h3>Data Analytics &amp; Experiments</h3>
+                        <ul>
+                            <li>Python · pandas / NumPy / scipy</li>
+                            <li>SQL · complex queries / window functions / 600K+ prospects in production</li>
+                            <li>Funnel analysis · attribution · stratified A/B experiments</li>
+                            <li>5-dimension user profiling / 1000+ tag taxonomy</li>
+                            <li>R (coursework)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-num">S / 04</span>
+                        <h3>Certifications &amp; Other</h3>
+                        <ul>
+                            <li>CDA Data Analyst · Level I &amp; II</li>
+                            <li>CDGA Data Governance Engineer</li>
+                            <li>CET-6 · 537</li>
+                            <li>Ranked 3 / 20 · First-class scholarship</li>
+                            <li>CPC member · age 23</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- CONTACT                                         -->
+        <!-- ============================================ -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="contact-bar">
+                    <a href="mailto:lujiayi2361516036@163.com" class="contact-bar-email">
+                        lujiayi2361516036@163.com
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+
+                    <ul class="contact-bar-links">
+                        <li><a href="https://github.com/luck67-svg" target="_blank" rel="noopener noreferrer">GitHub →</a></li>
+                        <li><a href="https://github.com/luck67-svg/Strategem.git" target="_blank" rel="noopener noreferrer">Strategem →</a></li>
+                        <li><a href="https://github.com/luck67-svg/SlayQuiz.git" target="_blank" rel="noopener noreferrer">SlayQuiz →</a></li>
+                        <li><a href="mailto:lujiayi2361516036@163.com">lujiayi2361516036@163.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================ -->
+    <!-- DEMO MODAL                                     -->
+    <!-- ============================================ -->
+    <div class="demo-modal" id="demoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="demoTitle">
+        <div class="demo-modal-backdrop" data-demo-close></div>
+        <div class="demo-modal-content" role="document">
+            <button class="demo-modal-close" type="button" aria-label="Close demo" data-demo-close>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="demo-modal-video" id="demoVideoContainer">
+                <!-- video / iframe injected by JS -->
+            </div>
+            <div class="demo-modal-info">
+                <h3 id="demoTitle" class="demo-modal-title">Demo title</h3>
+                <p id="demoDesc" class="demo-modal-desc">Demo description</p>
+                <a id="demoExternal" href="#" target="_blank" rel="noopener noreferrer" class="demo-modal-external">
+                    Open in new tab →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <span class="brand-mark brand-mark-sm">L</span>
+                <span>© 2026 Jiayi Lu · Built with care for Fall 2027 recruiting.</span>
+            </div>
+            <div class="footer-right">
+                <span>Hand-coded with</span>
+                <span class="footer-tech">HTML</span>
+                <span>·</span>
+                <span class="footer-tech">CSS</span>
+                <span>·</span>
+                <span class="footer-tech">JS</span>
+                <span>·</span>
+                <span>Fonts by Google</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
