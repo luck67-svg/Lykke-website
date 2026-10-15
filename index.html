@@ -253,18 +253,18 @@
                         </div>
                         <div class="project-info">
                             <span class="project-num">P / 01</span>
-                            <h3 class="project-title">SGT-Aug · 长尾多标签分类的语义引导数据增强 <span class="project-pub">· ICME 2026 (CCF-B) 一作</span></h3>
-                            <p class="project-sub">用预训练 Transformer 帮 ResNet 找"长尾类相关前景区域"，给少样本类别定向做数据增强。</p>
+                            <h3 class="project-title">SGT-Aug · 长尾多标签分类的语义引导数据增强 <span class="project-pub">· ICME 2026 (CCF-B) 一作 · 已录用, 11 月 EI 检索</span></h3>
+                            <p class="project-sub">引入 Transformer 建模标签间语义关联，实现与 ResNet50 骨干的语义–视觉交互定位尾部特征，构建数据增强策略缓解尾类数据稀疏问题。</p>
                             <p class="project-desc">
-                                <strong>问题：</strong>长尾多标签图像分类里，尾类样本少、视觉特征弱，直接训容易把尾类"压"掉。
+                                <strong>问题：</strong>长尾多标签图像分类中，尾类样本稀缺且分布不均，直接训练容易被"压"平。
                             </p>
                             <p class="project-desc">
                                 <strong>做法：</strong>基于 ResNet50 骨干 + 预训练 Transformer 做语义-视觉交互，定位尾类相关前景区域；
                                 在定位结果上构建数据增强策略，缓解长尾类别的不平衡（不加剧类别不平衡）。
                             </p>
                             <p class="project-desc">
-                                <strong>训练与验证：</strong>在 Linux + PyTorch 上用单机多卡 DataParallel 分布式训练；
-                                在 VOC-LT / COCO-LT 上做系统对比和消融实验，结合常用分类损失函数即可优于多种现有长尾多标签方法。
+                                <strong>训练与结果：</strong>在 Linux + PyTorch 上用单机多卡 DataParallel 分布式训练；
+                                在 VOC-LT / COCO-LT 上做系统对比和消融实验，<strong>尾部分类精度较对比方法基线提升 5.55 / 10.33 个百分点</strong>，结合常用分类损失函数即可优于多种现有长尾多标签方法。
                             </p>
                             <ul class="project-tags">
                                 <li>PyTorch</li>
@@ -274,8 +274,8 @@
                                 <li>VOC-LT / COCO-LT</li>
                             </ul>
                             <div class="project-links">
-                                <a href="#" class="project-link">论文 (ICME 2026) →</a>
-                                <a href="#" class="project-link project-link-external">BibTeX →</a>
+                                <a href="#" class="project-link" title="链接待补充">论文 (ICME 2026 · 已录用) →</a>
+                                <a href="#" class="project-link project-link-external" title="链接待补充">BibTeX (待补充) →</a>
                             </div>
                         </div>
                     </li>
@@ -314,32 +314,37 @@
                         </div>
                         <div class="project-info">
                             <span class="project-num">P / 02</span>
-                            <h3 class="project-title">SlayQuiz · AI 出题闯关微信小程序</h3>
-                            <p class="project-sub">负责从需求调研、竞品分析、方案设计到前后端实现的完整链路，做出能自己出题、自己改错题的产品。</p>
+                            <h3 class="project-title">SlayQuiz · JD 驱动的 AI 面试训练小程序</h3>
+                            <p class="project-sub">面向求职者面对岗位 JD 信息密集、准备路径碎片化的场景，把非结构化 JD 拆解为岗位画像 + 能力图谱 + 分层训练路径，形成"理解—练习—反馈—复习—提升"训练闭环。</p>
                             <p class="project-desc">
-                                <strong>前后端 + 核心产品：</strong>基于 Taro + TypeScript 构建微信小程序，配合 FastAPI 后端实现岗位创建、题目生成、答题记录、结果分析、知识库管理等核心接口。
+                                <strong>产品定位：</strong>独立负责需求分析、方案设计、技术选型与原型迭代，把 AI 出题与评分、XP、通关、统计等确定性业务规则解耦，专注"JD 驱动的个性化训练"产品闭环。
                             </p>
                             <p class="project-desc">
-                                <strong>AI 生成链路：</strong>用 LangChain + DeepSeek 搭出题与反馈管线，加 JD 校验、联网搜索增强、结构化输出、题目规则校验四道关，提升题目生成与解析反馈的稳定性。
+                                <strong>前后端架构：</strong>前端基于 Taro + TypeScript 构建微信小程序（兼顾 H5 跨端扩展），覆盖岗位创建、训练关卡、答题解析、错题复习、知识库管理等核心页面；后端基于 FastAPI 提供岗位、题集、作答、报告、认证及知识库接口，通过请求/响应契约完成状态同步。
                             </p>
                             <p class="project-desc">
-                                <strong>RAG 私有知识库：</strong>支持 PDF / Word / URL 资料解析，文本切分后用 DashScope Embedding 向量化，存到 Qdrant，按用户隔离知识库，用于定制化练习出题。
-                                还搭了学习增强闭环：错题本、间隔复习、变式题、知识库练习、自适应难度 + XP 激励。
+                                <strong>AI 层 · LangChain + DeepSeek：</strong>用 LangChain 编排 DeepSeek 的岗位分析与按需出题 Chain，结合 Bocha / Tavily 联网搜索补充岗位上下文；采用 JSON Mode + Pydantic Schema 解析模型输出，以题型配额、答案基数、知识点归属与题干去重等规则拦截不合规内容。
                             </p>
                             <p class="project-desc">
-                                <strong>AI 编程工具：</strong>用 VSCode / Claude Code / MCP / Agent Skills 辅助需求拆解、方案验证、代码实现和测试修复。
+                                <strong>生成可靠性：</strong>设计异步任务 + 容错链路——通过任务状态轮询、幂等键、有限重试与分级恢复处理模型超时、网络异常、JSON 解析失败及规则校验失败；对重复题和答案结构异常题执行定点修复，避免整轮重生成。评分、XP、通关与统计交由确定性程序计算，把不确定性隔离在内容生成环节。
+                            </p>
+                            <p class="project-desc">
+                                <strong>Hybrid RAG + 学习闭环：</strong>支持 PDF / Word / URL 多格式资料解析、文本切分、DashScope Embedding 向量化与 Qdrant 检索，按用户隔离数据访问；学习模块结合错题本、变式题、1/3/7/14 天阶段式间隔复习，以及基于最近 20 题正确率 + 样本量 + 错题知识点在 basic / applied / interview 三档难度间自适应调整，叠加 XP 激励组织训练路径。
+                            </p>
+                            <p class="project-desc">
+                                <strong>关键结果：</strong>题目生成耗时 P90 &lt; 15s；轮内语义重复率 0，跨轮语义重复率 &lt; 5%；完整跑通"JD 理解 → 训练路线 → 按需出题 → 即时反馈 → 错题复习 → 学习报告"AI 学习闭环，支持多岗位训练与用户级知识库隔离。
                             </p>
                             <ul class="project-tags">
                                 <li>Taro · TypeScript</li>
                                 <li>FastAPI</li>
-                                <li>LangChain</li>
-                                <li>RAG · Qdrant</li>
-                                <li>DashScope Embedding</li>
-                                <li>Claude Code</li>
+                                <li>LangChain · DeepSeek</li>
+                                <li>Hybrid RAG · Qdrant</li>
+                                <li>Pydantic · JSON Schema</li>
+                                <li>Async Tasks · Retry</li>
                             </ul>
                             <div class="project-links">
                                 <a href="https://github.com/luck67-svg/SlayQuiz.git" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
-                                <a href="https://github.com/luck67-svg/SlayQuiz.git" target="_blank" rel="noopener noreferrer" class="project-link project-link-external">代码仓库 →</a>
+                                <a href="https://github.com/luck67-svg/SlayQuiz.git" target="_blank" rel="noopener noreferrer" class="project-link project-link-external">Source →</a>
                             </div>
                         </div>
                     </li>
@@ -379,28 +384,36 @@
                         <div class="project-info">
                             <span class="project-num">P / 03</span>
                             <h3 class="project-title">Strategem · 企业决策情报多 Agent 平台</h3>
-                            <p class="project-sub">面向储能 / 虚拟电厂等数字能源场景，把行业研究从"读报告"做成"跑流水线"。</p>
+                            <p class="project-sub">面向储能、虚拟电厂等行业研究场景，把行业研究从"读报告"做成"跑流水线"——多角色 Agent 协同输出可追溯的决策情报。</p>
                             <p class="project-desc">
-                                <strong>多 Agent 产业研究工作流：</strong>基于 FastAPI + LangGraph + Next.js 构建 Planner → Research → Analysis → Financial → Verification 协同工作流，把用户问题拆成 Research Plan、子问题、检索计划与结构化报告大纲，让产业研究 / 报告生成自动化。
+                                <strong>Deep Research Agent 整体：</strong>基于 FastAPI + LangGraph + Next.js 构建，支持研究计划确认、报告生成、章节级重写、SSE 任务阶段进度展示以及引用证据查看。
                             </p>
                             <p class="project-desc">
-                                <strong>双源检索与可信证据体系：</strong>设计 Source + Router + RAG 双路检索机制，结论与数据源结构化绑定，降低信息幻觉；
-                                把行业术语 / 价值链 / 指标口径做成可配置领域知识，注入到智能体里，覆盖产业链定位、政策市场、竞争格局、技术链等模块的动态深度分析。
+                                <strong>状态机 + 路由：</strong>基于 LangGraph 状态机与 ResearchState 编排意图识别、计划生成、检索、证据整理、分析和写作；采用"关键词规则兜底 + LLM 结构化分类"进行任务路由、低置信度澄清与研究计划确认，通过离线评测验证<strong>路由准确率达 96%</strong>。
                             </p>
                             <p class="project-desc">
-                                <strong>幻觉防控：</strong>围绕可信 AI 输出做引用链 + 审计机制，自动处理非法引用、未覆盖模块、低可信来源、重复证据和待验证问题。
+                                <strong>证据覆盖驱动：</strong>通过证据覆盖度与迭代预算控制研究流程——当存在未覆盖子问题且未达迭代上限时生成补充查询并回流检索，否则生成报告；报告完成后复用既有证据链支持章节级重写。
+                            </p>
+                            <p class="project-desc">
+                                <strong>双检索 + 证据池：</strong>构建"网络搜索 + PostgreSQL + pgvector 本地知识库"双检索链路，支持多格式文档上传解析、切块、DashScope Embedding 与 pgvector 召回；按租户与用户范围组织数据，对网络来源依据语义相关性、权威度与时效性排序，并通过 URL/标题及内容哈希<strong>两级去重</strong>，形成可追溯的统一证据池。
+                            </p>
+                            <p class="project-desc">
+                                <strong>证据链 + 审计：</strong>设计"来源—证据—结论—引用"四级证据链与审计机制，通过来源白名单、双层去重、后端引用派生与结构化输出约束，过滤非法或无证据结论；对冲突数据、缺失模块和结构化输出失败执行审计、重试或降级，并将未覆盖项写入待验证问题。
+                            </p>
+                            <p class="project-desc">
+                                <strong>职责与关键结果：</strong>负责 Deep Research Agent 的整体技术方案与核心链路开发——LangGraph 状态机、ResearchState、双检索与证据池、证据覆盖驱动的补搜策略、引用派生 + 审计标记、结构化输出重试与降级；系统支持多租户隔离、章节级重写与可追溯的引用关系。
                             </p>
                             <ul class="project-tags">
-                                <li>LangGraph</li>
-                                <li>RAG</li>
-                                <li>FastAPI</li>
+                                <li>LangGraph · State Machine</li>
+                                <li>Deep Research Agent</li>
                                 <li>Next.js</li>
+                                <li>FastAPI · SSE</li>
                                 <li>Postgres + pgvector</li>
-                                <li>Claude / DeepSeek</li>
+                                <li>Evidence Binding</li>
                             </ul>
                             <div class="project-links">
                                 <a href="https://github.com/luck67-svg/Strategem.git" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
-                                <a href="https://github.com/luck67-svg/Strategem.git" target="_blank" rel="noopener noreferrer" class="project-link project-link-external">代码仓库 →</a>
+                                <a href="https://github.com/luck67-svg/Strategem.git" target="_blank" rel="noopener noreferrer" class="project-link project-link-external">Source →</a>
                             </div>
                         </div>
                     </li>
@@ -576,12 +589,13 @@
 
                     <div class="skill-card">
                         <span class="skill-num">S / 04</span>
-                        <h3>证书 & 其他</h3>
+                        <h3>证书 & 荣誉</h3>
                         <ul>
-                            <li>CDA 数据分析师 · Level I & II</li>
+                            <li>2026 年国家奖学金 · 一等学业奖学金</li>
+                            <li>专业排名 2 / 20</li>
+                            <li>CDA 数据分析师 · Level I &amp; II</li>
                             <li>CDGA 数据治理工程师</li>
                             <li>CET-6 · 537 分</li>
-                            <li>专业排名 3 / 20 · 一等奖学金</li>
                             <li>共产党员 · 23 岁</li>
                         </ul>
                     </div>

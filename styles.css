@@ -1565,6 +1565,20 @@ body::before {
     background: rgba(255, 255, 255, 0.22);
 }
 
+/* ----- Lightbox: image mode (large figures + résumé) ------ */
+.demo-modal[data-type="image"] .demo-modal-content {
+    max-width: 1200px;
+}
+.demo-modal[data-type="image"] .demo-modal-video {
+    /* Drop the 16:9 lock so tall images (resume, paper figures) can
+       fill the available height with their native aspect ratio. */
+    aspect-ratio: auto;
+    width: min(95vw, 1200px);
+    height: 88vh;
+    max-width: 1200px;
+    background: #0d0a1f;          /* dark plum to frame the image edge */
+}
+
 /* ----- Lightbox: PDF / Résumé mode ------------------------- */
 .demo-modal[data-type="pdf"] .demo-modal-content {
     max-width: 1100px;

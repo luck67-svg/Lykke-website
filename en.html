@@ -247,16 +247,16 @@
                         </div>
                         <div class="project-info">
                             <span class="project-num">P / 01</span>
-                            <h3 class="project-title">SGT-Aug · Semantics-Guided Data Augmentation for Long-Tailed Multi-Label Classification <span class="project-pub">· ICME 2026 (CCF-B) · 1st author</span></h3>
-                            <p class="project-sub">Use a pretrained Transformer to guide ResNet toward tail-class-relevant foreground regions, then synthesize augmentations for low-shot classes.</p>
+                            <h3 class="project-title">SGT-Aug · Semantics-Guided Augmentation for Long-Tailed Multi-Label Classification <span class="project-pub">· ICME 2026 (CCF-B) · 1st author · Accepted, EI indexed by Nov</span></h3>
+                            <p class="project-sub">Inject a pretrained Transformer to model label-wise semantic relations, enabling semantic–vision interaction with a ResNet50 backbone to localize tail-class regions and synthesize targeted augmentations that ease tail-class sparsity.</p>
                             <p class="project-desc">
-                                <strong>Problem:</strong> in long-tailed multi-label image classification, tail classes are sparse and visually weak — naive training tends to "squeeze them out".
+                                <strong>Problem:</strong> in long-tailed multi-label image classification, tail classes are sparse and unevenly distributed — naive training tends to "squeeze them flat".
                             </p>
                             <p class="project-desc">
                                 <strong>Approach:</strong> ResNet50 backbone + pretrained Transformer for semantic–vision interaction, localizing tail-class-relevant foreground regions. Augmentation is built on those localizations to ease the long-tail imbalance without amplifying it.
                             </p>
                             <p class="project-desc">
-                                <strong>Training &amp; validation:</strong> Linux + PyTorch with single-node multi-GPU DataParallel. Systematic comparison and ablations on VOC-LT / COCO-LT, combined with standard classification losses, outperform several long-tailed multi-label baselines.
+                                <strong>Training &amp; results:</strong> Linux + PyTorch with single-node multi-GPU DataParallel. Systematic comparison and ablations on VOC-LT / COCO-LT — <strong>tail-class accuracy improves by 5.55 / 10.33 percentage points</strong> over comparison baselines, and combined with standard classification losses it outperforms several long-tailed multi-label methods.
                             </p>
                             <ul class="project-tags">
                                 <li>PyTorch</li>
@@ -266,8 +266,8 @@
                                 <li>VOC-LT / COCO-LT</li>
                             </ul>
                             <div class="project-links">
-                                <a href="#" class="project-link">Paper (ICME 2026) →</a>
-                                <a href="#" class="project-link project-link-external">BibTeX →</a>
+                                <a href="#" class="project-link" title="Link coming soon">Paper (ICME 2026, accepted) →</a>
+                                <a href="#" class="project-link project-link-external" title="Link coming soon">BibTeX (coming soon) →</a>
                             </div>
                         </div>
                     </li>
@@ -306,27 +306,33 @@
                         </div>
                         <div class="project-info">
                             <span class="project-num">P / 02</span>
-                            <h3 class="project-title">SlayQuiz · AI-Powered Quiz WeChat Mini-Program</h3>
-                            <p class="project-sub">Owned the full lifecycle from research and competitive analysis to design and full-stack implementation — a product that generates its own questions and self-corrects.</p>
+                            <h3 class="project-title">SlayQuiz · JD-Driven AI Interview-Training Mini-Program</h3>
+                            <p class="project-sub">For job-seekers drowning in dense JDs and fragmented prep paths — decomposes unstructured JDs into role profiles, skill graphs, and tiered training paths, closing the loop from "understand → practice → feedback → review → improve".</p>
                             <p class="project-desc">
-                                <strong>Full-stack + product core:</strong> WeChat mini-program built with Taro + TypeScript, backed by a FastAPI server powering job creation, question generation, answer logging, result analysis, and knowledge-base management.
+                                <strong>Product framing:</strong> sole owner of requirements, design, technical selection, and prototyping. Decoupled AI generation from deterministic rules (scoring / XP / unlock / stats) and built the closed loop around "JD-driven, personalized interview training".
                             </p>
                             <p class="project-desc">
-                                <strong>AI generation pipeline:</strong> question &amp; feedback pipeline via LangChain + DeepSeek with four guardrails — JD validation, web-search augmentation, structured output, and rule-based sanity checks — making both generation and feedback noticeably more stable.
+                                <strong>Stack:</strong> Taro + TypeScript mini-program (with H5 cross-end extension) on the front; FastAPI on the back for jobs, question sets, attempts, reports, auth, and KB endpoints, synced via request/response contracts.
                             </p>
                             <p class="project-desc">
-                                <strong>RAG private knowledge base:</strong> parses PDF / Word / URLs, chunks and embeds with DashScope Embedding, stores in Qdrant, and isolates namespaces per user for personalized practice. Adds a learning loop: mistake notebook, spaced repetition, variant questions, KB drills, adaptive difficulty + XP rewards.
+                                <strong>AI layer (LangChain + DeepSeek):</strong> LangChain orchestrates DeepSeek for JD analysis and on-demand question generation; Bocha / Tavily web search enriches the JD context. JSON Mode + Pydantic Schema parse model output, while question-type quotas, answer-cardinality, knowledge-point binding, and question de-duplication gate non-compliant content.
                             </p>
                             <p class="project-desc">
-                                <strong>AI dev tools:</strong> VSCode / Claude Code / MCP / Agent Skills for spec breakdown, solution validation, implementation, and test-fix cycles.
+                                <strong>Generation reliability:</strong> async task + fault-tolerance pipeline — status polling, idempotency keys, bounded retries, and tiered recovery handle model timeouts, network errors, JSON parse failures, and rule-check failures. Repeated or malformed questions are repaired in place, avoiding full-set regeneration. Scoring, XP, unlock, and stats are computed by deterministic code; uncertainty is contained at the content-generation step.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Hybrid RAG + learning loop:</strong> PDF / Word / URL ingestion, chunking, DashScope Embedding, and Qdrant retrieval with per-user data isolation. Learning layer combines mistake notebooks, variant questions, staged spaced repetition (1/3/7/14 days), and adaptive difficulty across basic / applied / interview tiers — driven by the last-20 accuracy, sample size, and mistake knowledge points — with XP rewards to shape the training path.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Key results:</strong> question-generation latency P90 &lt; 15s; in-round semantic duplication 0, cross-round semantic duplication &lt; 5%; full closed loop from "JD understanding → training plan → on-demand generation → instant feedback → mistake review → learning report", with multi-job support and per-user KB isolation.
                             </p>
                             <ul class="project-tags">
                                 <li>Taro · TypeScript</li>
                                 <li>FastAPI</li>
-                                <li>LangChain</li>
-                                <li>RAG · Qdrant</li>
-                                <li>DashScope Embedding</li>
-                                <li>Claude Code</li>
+                                <li>LangChain · DeepSeek</li>
+                                <li>Hybrid RAG · Qdrant</li>
+                                <li>Pydantic · JSON Schema</li>
+                                <li>Async Tasks · Retry</li>
                             </ul>
                             <div class="project-links">
                                 <a href="https://github.com/luck67-svg/SlayQuiz.git" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
@@ -370,23 +376,32 @@
                         <div class="project-info">
                             <span class="project-num">P / 03</span>
                             <h3 class="project-title">Strategem · Multi-Agent Decision-Intelligence Platform</h3>
-                            <p class="project-sub">For energy-storage / virtual-power-plant digital-energy scenarios — turning industry research from "reading reports" into a runnable pipeline.</p>
+                            <p class="project-sub">For energy-storage / virtual-power-plant industry research — turning "reading reports" into a runnable pipeline where multi-role agents collaborate to produce traceable decision intelligence.</p>
                             <p class="project-desc">
-                                <strong>Multi-Agent research workflow:</strong> Planner → Research → Analysis → Financial → Verification on FastAPI + LangGraph + Next.js. Decomposes a user query into a research plan, sub-questions, a retrieval plan, and a structured outline — automating both industry research and report generation.
+                                <strong>Deep Research Agent, end-to-end:</strong> built on FastAPI + LangGraph + Next.js — supports research-plan confirmation, report generation, section-level rewriting, SSE streaming of task-stage progress, and reference-evidence inspection.
                             </p>
                             <p class="project-desc">
-                                <strong>Dual-source retrieval &amp; evidence binding:</strong> Source + Router + RAG dual-channel retrieval; claims are structured-bound to evidence, slashing hallucination. Industry terms / value chains / metric definitions are packaged as configurable domain knowledge injected into the agents — covering industry positioning, policy &amp; market, competitive landscape, and tech chains with on-demand depth.
+                                <strong>State machine + routing:</strong> LangGraph state machine + ResearchState orchestrates intent recognition, plan generation, retrieval, evidence assembly, analysis, and writing. Routing combines "keyword-rule fallback + LLM structured classification" for task triage, low-confidence clarification, and plan confirmation — <strong>96% routing accuracy</strong> verified by offline evaluation.
                             </p>
                             <p class="project-desc">
-                                <strong>Hallucination control:</strong> citation chains + an audit layer that auto-handles dangling citations, uncovered modules, low-credibility sources, duplicate evidence, and pending verifications.
+                                <strong>Evidence-coverage driven loop:</strong> research flow is controlled by evidence coverage and an iteration budget — when uncovered sub-questions remain and the iteration cap is not yet hit, a supplementary query is generated and fed back to retrieval; otherwise the report is produced. Existing evidence chains are reused for section-level rewrites after report completion.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Dual retrieval + evidence pool:</strong> "web search + PostgreSQL + pgvector local KB" dual-channel pipeline; multi-format upload → parse → chunk → DashScope Embedding → pgvector recall. Tenant- and user-scoped data isolation; web sources are ranked by semantic relevance, authority, and freshness, and <strong>two-level de-duplication (URL/title + content hash)</strong> forms a traceable unified evidence pool.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Evidence chain + audit:</strong> four-level "source → evidence → conclusion → citation" chain and audit layer — source whitelist, two-level de-duplication, back-end citation derivation, and structured-output constraints filter illegal or unsupported claims. Conflicting data, missing modules, and structured-output failures are audited, retried, or downgraded; uncovered items are written to the pending-verification queue.
+                            </p>
+                            <p class="project-desc">
+                                <strong>Ownership &amp; outcomes:</strong> led the technical design and core pipeline of the Deep Research Agent — LangGraph state machine, ResearchState, dual retrieval + evidence pool, coverage-driven supplementary search, citation derivation + audit markers, and structured-output retry/downgrade. The system supports multi-tenant isolation, section-level rewrites, and a fully traceable citation graph.
                             </p>
                             <ul class="project-tags">
-                                <li>LangGraph</li>
-                                <li>RAG</li>
-                                <li>FastAPI</li>
+                                <li>LangGraph · State Machine</li>
+                                <li>Deep Research Agent</li>
                                 <li>Next.js</li>
+                                <li>FastAPI · SSE</li>
                                 <li>Postgres + pgvector</li>
-                                <li>Claude / DeepSeek</li>
+                                <li>Evidence Binding</li>
                             </ul>
                             <div class="project-links">
                                 <a href="https://github.com/luck67-svg/Strategem.git" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
@@ -559,12 +574,13 @@
 
                     <div class="skill-card">
                         <span class="skill-num">S / 04</span>
-                        <h3>Certifications &amp; Other</h3>
+                        <h3>Certifications &amp; Awards</h3>
                         <ul>
+                            <li>2026 National Scholarship · First-class Academic Scholarship</li>
+                            <li>Ranked 2 / 20</li>
                             <li>CDA Data Analyst · Level I &amp; II</li>
                             <li>CDGA Data Governance Engineer</li>
                             <li>CET-6 · 537</li>
-                            <li>Ranked 3 / 20 · First-class scholarship</li>
                             <li>CPC member · age 23</li>
                         </ul>
                     </div>
