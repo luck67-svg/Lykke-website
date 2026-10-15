@@ -384,14 +384,18 @@
         }
     });
 
-    // ---- "View Resume" button → opens PDF in the same lightbox ----
+    // ---- "View Resume" button → opens resume image in the same lightbox ----
+    // Uses image mode (not PDF iframe) so the user can wheel-zoom / pan / double-click
+    // just like the project figures. We auto-detect type from the file extension so
+    // a future English .pdf would still work without code changes.
     document.querySelectorAll('[data-resume]').forEach((btn) => {
         btn.addEventListener('click', () => {
             const src     = btn.getAttribute('data-resume-src');
             const title   = btn.getAttribute('data-resume-title')   || 'Résumé';
             const caption = btn.getAttribute('data-resume-caption') || '';
             if (!src) return;
-            openLightbox('pdf', src, title, caption);
+            const isPdf = /\.pdf(\?|$)/i.test(src);
+            openLightbox(isPdf ? 'pdf' : 'image', src, title, caption);
         });
     });
 })();
