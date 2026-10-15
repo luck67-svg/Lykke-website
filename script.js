@@ -211,6 +211,9 @@
         zoom = 1; panX = 0; panY = 0;
         isDragging = false;
 
+        // Tag the modal so CSS can size it per media type.
+        modal.setAttribute('data-type', type);
+
         // Stop anything currently in the slot.
         mediaSlot.innerHTML = '';
 
@@ -249,6 +252,21 @@
                 e.stopPropagation();
                 resetZoom();
             });
+        } else if (type === 'pdf') {
+            // Embed the PDF via iframe; Chrome / Edge / Firefox render it
+            // inline, Safari (desktop) renders inline, iOS Safari opens it
+            // in a native viewer. Toolbar is shown so the user can download
+            // or print if they want.
+            const iframe = document.createElement('iframe');
+            iframe.src = src + '#view=FitH&toolbar=1';
+            iframe.title = title || 'PDF';
+            iframe.setAttribute('allow', 'fullscreen');
+            iframe.style.cssText =
+                'position:absolute;inset:0;width:100%;height:100%;' +
+                'border:0;background:#fff;';
+            mediaSlot.appendChild(iframe);
+            currentMedia = iframe;
+            levelEl = null;
         } else {
             const v = document.createElement('video');
             v.src = src;
@@ -287,11 +305,14 @@
             v.removeAttribute('src');
             v.load();
         });
+        // Detach the iframe (PDF) so the browser actually unloads it
+        mediaSlot.querySelectorAll('iframe').forEach((f) => { f.src = 'about:blank'; });
         mediaSlot.innerHTML = '';
         currentMedia = null;
         levelEl = null;
         zoom = 1; panX = 0; panY = 0; isDragging = false;
         mediaSlot.style.cursor = '';
+        modal.removeAttribute('data-type');
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
         if (lastFocus && typeof lastFocus.focus === 'function') {
@@ -361,5 +382,16 @@
         if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
             closeLightbox();
         }
+    });
+
+    // ---- "View Resume" button → opens PDF in the same lightbox ----
+    document.querySelectorAll('[data-resume]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const src     = btn.getAttribute('data-resume-src');
+            const title   = btn.getAttribute('data-resume-title')   || 'Résumé';
+            const caption = btn.getAttribute('data-resume-caption') || '';
+            if (!src) return;
+            openLightbox('pdf', src, title, caption);
+        });
     });
 })();

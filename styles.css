@@ -1565,6 +1565,20 @@ body::before {
     background: rgba(255, 255, 255, 0.22);
 }
 
+/* ----- Lightbox: PDF / Résumé mode ------------------------- */
+.demo-modal[data-type="pdf"] .demo-modal-content {
+    max-width: 1100px;
+}
+.demo-modal[data-type="pdf"] .demo-modal-video {
+    /* Override the default 16:9 video aspect ratio — let the iframe
+       fill the available height, with a sensible A4-ish cap. */
+    aspect-ratio: auto;
+    height: min(88vh, 1200px);
+    background: #525659;          /* Chrome PDF viewer chrome color */
+    border-radius: var(--radius);
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.5);
+}
+
 /* ----- Lightbox zoom controls (image mode only) ----------- */
 .demo-zoom-controls {
     position: absolute;
