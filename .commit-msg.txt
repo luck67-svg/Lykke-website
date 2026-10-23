@@ -1,0 +1,27 @@
+content: shift positioning from product to AI algorithms and applied ML
+
+Recurring product vocabulary (products / product loop / AI Product / AI Apps
+/ "stitches data and products") has been replaced across both language
+versions so the page reads toward algorithm-engineering roles.
+
+- title + meta description: AI Algorithms / Applied ML; tagline now promises
+  shipped models (LLM pipelines, ensembles, evaluation harnesses)
+- hero eyebrow: "Applied Statistics / AI Product" -> "/ AI Algorithms"
+- hero headline: "decisions, products," -> "decisions, models," (keeps the
+  4-line structure; the accent pair now reads decisions -> models)
+- hero tagline: reframed from "capabilities into products" to "statistical
+  intuition into shipped models"
+- hero Focus meta: AI 算法 · 应用机器学习 / AI Algorithms - Applied ML
+- About subtitle: "把统计直觉变成能上线��模型" / "Turns statistics into
+  models that ship"
+- About p1 now closes on "where it breaks" - the failure-boundary framing
+  algorithm interviewers probe for
+- About p2 leads with the technical stack (LangChain + DeepSeek chains,
+  LangGraph state machines, dual retrieval, evidence-grounded citation)
+  instead of product-loop framing
+- Skills subtitle: AI 算法 / 机器学习工程 / 数据分析 / 证书
+- Skill S/01 heading: "AI 算法 & 工程" / "AI Algorithms & Engineering"
+- P/02 first block: "产品定位" -> "系统设计" / "Product framing" ->
+  "System design"
+
+Zero product-flavored words remain in either file.
