@@ -3,6 +3,11 @@
 # Keep deployable artifacts; exclude debug / privacy / refs.
 # =========================================================
 
+# --- Agent / tooling scratch files ---
+.commit-msg.txt*
+.wranglerignore
+wrangler.toml
+
 # --- Debug / tooling ---
 *.py
 __pycache__/
