@@ -1122,34 +1122,67 @@ body::before {
     text-transform: uppercase;
 }
 
-/* ----- P/01 duo layout: poster + paper figure ------------
-   The ICME poster is the headline artifact, so P/01 breaks out
-   of the two-column item grid: both figures sit side by side on
-   top, and the project copy runs full width underneath. */
-.project-item--duo {
-    grid-template-columns: 1fr;
-    align-items: start;
+/* ----- P/01 stacked figures (paper figure in front, poster behind) --
+   Both slides live in the same 16:10 tile so P/01 keeps the original
+   two-column item layout. The poster sits behind, offset so a sliver
+   of it shows; clicking either card opens the lightbox on that slide
+   and the lightbox can page between them. */
+.project-visual--stack {
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
 }
-.project-visual-duo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--s-4);
-    align-items: start;
+.stack-card {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #fff;
+    box-shadow: 0 12px 30px -16px rgba(27, 22, 53, 0.2);
+    cursor: zoom-in;
+    transition: transform var(--t-med) var(--ease),
+                opacity var(--t-med) var(--ease),
+                box-shadow var(--t-med) var(--ease);
+}
+.stack-card img {
     width: 100%;
-    max-width: 940px;
-    margin: 0 auto;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
-/* Both are portrait sources (poster ≈ 0.71, paper figure ≈ 0.82);
-   5/7 keeps them close to native and avoids heavy letterboxing. */
-.project-visual-duo .project-visual {
-    aspect-ratio: 5 / 7;
+.stack-card--front {
+    z-index: 2;
 }
-
-@media (max-width: 860px) {
-    .project-visual-duo {
-        grid-template-columns: 1fr;
-        max-width: 520px;
-    }
+.stack-card--back {
+    z-index: 1;
+    transform: translate(16px, 16px) scale(0.94);
+    opacity: 0.85;
+}
+.project-visual--stack:hover .stack-card--back {
+    transform: translate(7px, 7px) scale(0.975);
+    opacity: 1;
+}
+.project-visual--stack:hover .stack-card--front {
+    transform: scale(0.985);
+}
+.stack-counter {
+    position: absolute;
+    left: var(--s-3);
+    bottom: var(--s-3);
+    z-index: 4;
+    padding: 4px 10px;
+    background: rgba(27, 22, 53, 0.75);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    border-radius: var(--radius-sm);
+    backdrop-filter: blur(4px);
+    pointer-events: none;
 }
 
 /* ----- Image-based project visual ----------------------
@@ -1622,6 +1655,45 @@ body::before {
     border-radius: var(--radius);
     box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.5);
 }
+
+/* ----- Lightbox: gallery navigation (prev / next) ---------- */
+.demo-modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(27, 22, 53, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background var(--t-fast) var(--ease),
+                transform var(--t-fast) var(--ease);
+}
+.demo-modal-nav:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+.demo-modal-nav[hidden] { display: none; }
+.demo-modal-nav--prev { left: -20px; }
+.demo-modal-nav--next { right: -20px; }
+
+.demo-modal-counter {
+    display: inline-block;
+    margin-right: var(--s-3);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.72);
+}
+.demo-modal-counter[hidden] { display: none; }
 
 /* ----- Lightbox zoom controls (image mode only) ----------- */
 .demo-zoom-controls {

@@ -235,25 +235,22 @@
 
                 <ul class="project-list">
 
-                    <!-- P/01  SGT-Aug — ICME 2026 CCF-B (poster + paper figure) -->
-                    <li class="project-item project-item--duo">
-                        <div class="project-visual-duo">
-                            <div class="project-visual project-visual--img" data-lightbox="image" data-lightbox-src="assets/projects/sgt-aug-poster.png" data-lightbox-caption="SGT-Aug · ICME 2026 conference poster (full size, click to zoom)">
-                                <img src="assets/projects/sgt-aug-poster.png" alt="SGT-Aug ICME 2026 conference poster: framework, results, and ablations" loading="lazy" />
-                                <span class="project-visual-caption">ICME 2026 Poster</span>
-                                <span class="project-zoom" aria-hidden="true">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                                    View
-                                </span>
-                            </div>
-                            <div class="project-visual project-visual--img" data-lightbox="image" data-lightbox-src="assets/projects/sgt-aug-figure.png" data-lightbox-caption="SGT-Aug · Fig. 1 — t-SNE &amp; Class Activation">
+                    <!-- P/01  SGT-Aug — ICME 2026 CCF-B (paper figure + stacked poster) -->
+                    <li class="project-item">
+                        <div class="project-visual project-visual--stack" data-lightbox-group="sgt-aug">
+                            <figure class="stack-card stack-card--front" data-lightbox="image" data-lightbox-src="assets/projects/sgt-aug-figure.png" data-lightbox-caption="SGT-Aug · Fig. 1 — t-SNE &amp; Class Activation">
                                 <img src="assets/projects/sgt-aug-figure.png" alt="SGT-Aug paper figure: t-SNE embedding (left) and class activation (right)" loading="lazy" />
                                 <span class="project-visual-caption">Fig. 1 — t-SNE &amp; Class Activation</span>
                                 <span class="project-zoom" aria-hidden="true">
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     View
                                 </span>
-                            </div>
+                            </figure>
+                            <figure class="stack-card stack-card--back" data-lightbox="image" data-lightbox-src="assets/projects/sgt-aug-poster.png" data-lightbox-caption="SGT-Aug · ICME 2026 conference poster (full size, click to zoom)">
+                                <img src="assets/projects/sgt-aug-poster.png" alt="SGT-Aug ICME 2026 conference poster: framework, results, and ablations" loading="lazy" />
+                                <span class="project-visual-caption">ICME 2026 Poster</span>
+                            </figure>
+                            <span class="stack-counter" aria-hidden="true">1 / 2</span>
                         </div>
                         <div class="project-info">
                             <span class="project-num">P / 01</span>
@@ -629,12 +626,19 @@
             <button class="demo-modal-close" type="button" aria-label="Close demo" data-demo-close>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
+            <button class="demo-modal-nav demo-modal-nav--prev" id="demoPrev" type="button" aria-label="Previous image" hidden>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="demo-modal-nav demo-modal-nav--next" id="demoNext" type="button" aria-label="Next image" hidden>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
             <div class="demo-modal-video" id="demoVideoContainer">
                 <!-- video / iframe injected by JS -->
             </div>
             <div class="demo-modal-info">
                 <h3 id="demoTitle" class="demo-modal-title">Demo title</h3>
                 <p id="demoDesc" class="demo-modal-desc">Demo description</p>
+                <span id="demoCounter" class="demo-modal-counter" hidden></span>
                 <a id="demoExternal" href="#" target="_blank" rel="noopener noreferrer" class="demo-modal-external">
                     Open in new tab →
                 </a>

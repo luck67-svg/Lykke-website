@@ -204,17 +204,14 @@
         applyTransform();
     }
 
-    function openLightbox(type, src, title, caption) {
-        if (!src) return;
-        lastFocus   = document.activeElement;
-        currentType = type;
-        zoom = 1; panX = 0; panY = 0;
-        isDragging = false;
+    // ---- Gallery state (multi-slide lightbox) ----
+    const prevBtn     = document.getElementById('demoPrev');
+    const nextBtn     = document.getElementById('demoNext');
+    const counterEl   = document.getElementById('demoCounter');
+    let galleryItems  = [];
+    let galleryIndex  = 0;
 
-        // Tag the modal so CSS can size it per media type.
-        modal.setAttribute('data-type', type);
-
-        // Stop anything currently in the slot.
+    function buildMedia(type, src, title, caption) {
         mediaSlot.innerHTML = '';
 
         if (type === 'image') {
@@ -229,7 +226,6 @@
                 'transform:translate(-50%,-50%) scale(1);' +
                 '-webkit-user-drag:none;user-select:none;';
             mediaSlot.appendChild(img);
-            currentMedia = img;
 
             // Floating zoom control chip (image only).
             const ctrls = document.createElement('div');
@@ -252,7 +248,10 @@
                 e.stopPropagation();
                 resetZoom();
             });
-        } else if (type === 'pdf') {
+            return img;
+        }
+
+        if (type === 'pdf') {
             // Embed the PDF via iframe; Chrome / Edge / Firefox render it
             // inline, Safari (desktop) renders inline, iOS Safari opens it
             // in a native viewer. Toolbar is shown so the user can download
@@ -265,37 +264,84 @@
                 'position:absolute;inset:0;width:100%;height:100%;' +
                 'border:0;background:#fff;';
             mediaSlot.appendChild(iframe);
-            currentMedia = iframe;
             levelEl = null;
-        } else {
-            const v = document.createElement('video');
-            v.src = src;
-            v.controls = true;
-            v.autoplay = true;
-            v.playsInline = true;
-            v.preload = 'auto';
-            v.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;';
-            mediaSlot.appendChild(v);
-            currentMedia = v;
-            levelEl = null;
+            return iframe;
         }
 
-        titleEl.textContent = title || '';
-        descEl.textContent  = caption || '';
+        const v = document.createElement('video');
+        v.src = src;
+        v.controls = true;
+        v.autoplay = true;
+        v.playsInline = true;
+        v.preload = 'auto';
+        v.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;';
+        mediaSlot.appendChild(v);
+        levelEl = null;
+        return v;
+    }
+
+    function renderGallery() {
+        const item = galleryItems[galleryIndex];
+        if (!item) return;
+
+        currentType = item.type;
+        zoom = 1; panX = 0; panY = 0;
+        isDragging = false;
+
+        // Tag the modal so CSS can size it per media type.
+        modal.setAttribute('data-type', item.type);
+
+        currentMedia = buildMedia(item.type, item.src, item.title, item.caption);
+
+        titleEl.textContent = item.title || '';
+        descEl.textContent  = item.caption || '';
+
+        // Counter + prev/next visibility.
+        if (galleryItems.length > 1) {
+            if (counterEl) {
+                counterEl.textContent = (galleryIndex + 1) + ' / ' + galleryItems.length;
+                counterEl.hidden = false;
+            }
+            if (prevBtn) prevBtn.hidden = false;
+            if (nextBtn) nextBtn.hidden = false;
+        } else {
+            if (counterEl) { counterEl.textContent = ''; counterEl.hidden = true; }
+            if (prevBtn) prevBtn.hidden = true;
+            if (nextBtn) nextBtn.hidden = true;
+        }
 
         // "Open in new tab" only makes sense for videos.
-        if (type === 'video') {
-            externalEl.href = src;
+        if (item.type === 'video') {
+            externalEl.href = item.src;
             externalEl.textContent = '在新窗口打开 →';
             externalEl.style.display = '';
         } else {
             externalEl.style.display = 'none';
         }
 
-        mediaSlot.style.cursor = type === 'image' ? 'zoom-in' : 'default';
+        mediaSlot.style.cursor = item.type === 'image' ? 'zoom-in' : 'default';
+    }
+
+    function openLightbox(type, src, title, caption, gallery, index) {
+        if (!src) return;
+        lastFocus = document.activeElement;
+
+        galleryItems = (gallery && gallery.length)
+            ? gallery
+            : [{ type, src, title, caption }];
+        galleryIndex = (gallery && Number.isInteger(index)) ? index : 0;
+
+        renderGallery();
+
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
         if (closeBtn) closeBtn.focus();
+    }
+
+    function gotoGallery(delta) {
+        if (galleryItems.length < 2) return;
+        galleryIndex = (galleryIndex + delta + galleryItems.length) % galleryItems.length;
+        renderGallery();
     }
 
     function closeLightbox() {
@@ -312,6 +358,11 @@
         levelEl = null;
         zoom = 1; panX = 0; panY = 0; isDragging = false;
         mediaSlot.style.cursor = '';
+        galleryItems = [];
+        galleryIndex = 0;
+        if (counterEl) { counterEl.textContent = ''; counterEl.hidden = true; }
+        if (prevBtn) prevBtn.hidden = true;
+        if (nextBtn) nextBtn.hidden = true;
         modal.removeAttribute('data-type');
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
@@ -366,21 +417,51 @@
             if (e.target.closest('[data-play]')) return;     // inline play
             const inlineVid = el.querySelector('[data-project-video]');
             if (inlineVid && inlineVid.hasAttribute('data-playing')) return;
+
             const type    = el.getAttribute('data-lightbox');
             const src     = el.getAttribute('data-lightbox-src');
             const title   = el.getAttribute('data-lightbox-title')   || '';
             const caption = el.getAttribute('data-lightbox-caption') || '';
-            openLightbox(type, src, title, caption);
+            const group   = el.getAttribute('data-lightbox-group');
+
+            // Collect every slide in the same group so the lightbox can page
+            // through them (e.g. the stacked paper figure + ICME poster).
+            let gallery = null;
+            let index = 0;
+            if (group) {
+                const members = Array.from(document.querySelectorAll(
+                    '[data-lightbox-group="' + group + '"][data-lightbox]'
+                ));
+                gallery = members.map((m) => ({
+                    type:    m.getAttribute('data-lightbox'),
+                    src:     m.getAttribute('data-lightbox-src'),
+                    title:   m.getAttribute('data-lightbox-title')   || '',
+                    caption: m.getAttribute('data-lightbox-caption') || ''
+                }));
+                index = gallery.findIndex((g) => g.src === src);
+                if (index < 0) index = 0;
+            }
+
+            openLightbox(type, src, title, caption, gallery, index);
         });
     });
+
+    // ---- Prev / next buttons ----
+    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); gotoGallery(-1); });
+    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); gotoGallery(1); });
 
     // ---- Close handlers ----
     [backdrop, closeBtn].filter(Boolean).forEach((el) => {
         el.addEventListener('click', closeLightbox);
     });
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+        if (modal.getAttribute('aria-hidden') === 'true') return;
+        if (e.key === 'Escape') {
             closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+            gotoGallery(-1);
+        } else if (e.key === 'ArrowRight') {
+            gotoGallery(1);
         }
     });
 
