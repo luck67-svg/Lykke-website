@@ -1122,69 +1122,6 @@ body::before {
     text-transform: uppercase;
 }
 
-/* ----- P/01 stacked figures (paper figure in front, poster behind) --
-   Both slides live in the same 16:10 tile so P/01 keeps the original
-   two-column item layout. The poster sits behind, offset so a sliver
-   of it shows; clicking either card opens the lightbox on that slide
-   and the lightbox can page between them. */
-.project-visual--stack {
-    overflow: visible;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-}
-.stack-card {
-    position: absolute;
-    inset: 0;
-    margin: 0;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    border: 1px solid var(--border);
-    background: #fff;
-    box-shadow: 0 12px 30px -16px rgba(27, 22, 53, 0.2);
-    cursor: zoom-in;
-    transition: transform var(--t-med) var(--ease),
-                opacity var(--t-med) var(--ease),
-                box-shadow var(--t-med) var(--ease);
-}
-.stack-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
-.stack-card--front {
-    z-index: 2;
-}
-.stack-card--back {
-    z-index: 1;
-    transform: translate(16px, 16px) scale(0.94);
-    opacity: 0.85;
-}
-.project-visual--stack:hover .stack-card--back {
-    transform: translate(7px, 7px) scale(0.975);
-    opacity: 1;
-}
-.project-visual--stack:hover .stack-card--front {
-    transform: scale(0.985);
-}
-.stack-counter {
-    position: absolute;
-    left: var(--s-3);
-    bottom: var(--s-3);
-    z-index: 4;
-    padding: 4px 10px;
-    background: rgba(27, 22, 53, 0.75);
-    color: white;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    border-radius: var(--radius-sm);
-    backdrop-filter: blur(4px);
-    pointer-events: none;
-}
-
 /* ----- Image-based project visual ----------------------
    Used for papers / flowcharts where we drop in a real
    research figure. No purple gradient on image cards — we
