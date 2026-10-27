@@ -1122,6 +1122,36 @@ body::before {
     text-transform: uppercase;
 }
 
+/* ----- P/01 duo layout: poster + paper figure ------------
+   The ICME poster is the headline artifact, so P/01 breaks out
+   of the two-column item grid: both figures sit side by side on
+   top, and the project copy runs full width underneath. */
+.project-item--duo {
+    grid-template-columns: 1fr;
+    align-items: start;
+}
+.project-visual-duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-4);
+    align-items: start;
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+/* Both are portrait sources (poster ≈ 0.71, paper figure ≈ 0.82);
+   5/7 keeps them close to native and avoids heavy letterboxing. */
+.project-visual-duo .project-visual {
+    aspect-ratio: 5 / 7;
+}
+
+@media (max-width: 860px) {
+    .project-visual-duo {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+    }
+}
+
 /* ----- Image-based project visual ----------------------
    Used for papers / flowcharts where we drop in a real
    research figure. No purple gradient on image cards — we
